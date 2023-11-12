@@ -58,7 +58,7 @@ void loop() {
   }
 
   // Check for timeout (1ms since last byte received)
-  if (millis() - lastByteTime >= 1 && bufferIndex > 0) {
+  if (millis() - lastByteTime >= 10 && bufferIndex > 0) {
     // Send the packet
     esp_now_send(broadcastAddress, buffer, bufferIndex);
     // clear buffer
